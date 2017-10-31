@@ -9,8 +9,8 @@ class Movie < ApplicationRecord
         @api_key = "d31f1a94"
 
         movie_data = get("#{api_title}&apikey=#{@api_key}")
-
-        # movie_data = "http://www.omdbapi.com/?t=#{api_title}&apikey=d31f1a94"
+        movie_poster = ""
+        
 
         create!(title: movie_data['Title'],
             genre: movie_data['Genre'],

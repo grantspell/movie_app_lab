@@ -3,10 +3,14 @@
 <div class="movies">
         <% @movies.each do |movie| %>
             <h3><%= movie.title %></h3>
+            <div class="movie-poster">
+                <img src=<%movie.image.to_s%> alt="<% movie.title %>'s Poster Photo">
+            </div>
             <ul>
                 <li><%= movie.genre %></li>
                 <li><%= movie.year %></li>
                 <li><%= movie.synopsis %></li>
             </ul>
+        <%= button_to "Delete Movie", @movie, :method => :delete %>
         <% end %>
 </div>
